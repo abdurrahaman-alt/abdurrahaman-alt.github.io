@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdur Rahaman — Electrical Engineer</title>
+<meta name="description" content="Abdur Rahaman — Electrical Engineer. Diploma in Electrical Technology, BTEB. CAD drafting, PLC & industrial automation, power systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0c1c2e;
+    --bg-deep: #081420;
+    --panel: #12283f;
+    --panel-2: #163049;
+    --line: #24425f;
+    --line-soft: rgba(120,160,196,0.16);
+    --text: #eaf2fa;
+    --text-dim: #a9c0d4;
+    --text-faint: #6f8ba3;
+    --copper: #c9793e;
+    --copper-bright: #e69257;
+    --live: #55b98a;
+    --radius: 3px;
+    --maxw: 1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px),
+      var(--bg);
+    background-size: 34px 34px, 34px 34px, auto;
+    background-attachment: fixed;
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  ::selection{background:var(--copper); color:#0c1c2e;}
+  :focus-visible{outline:2px solid var(--copper-bright); outline-offset:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(8,20,32,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:600; letter-spacing:0.02em;}
+  .brand-mark{width:30px; height:30px; flex:none;}
+  .brand-text{font-family:'IBM Plex Sans Condensed', sans-serif; font-size:16px; color:var(--text);}
+  .brand-text b{color:var(--copper-bright);}
+  nav.links{display:flex; gap:26px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em;}
+  nav.links a{text-decoration:none; color:var(--text-dim); position:relative; padding:4px 0;}
+  nav.links a:hover{color:var(--copper-bright);}
+  .nav-cta{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.06em;
+    border:1px solid var(--copper); color:var(--copper-bright); padding:8px 14px; border-radius:var(--radius);
+    text-decoration:none; white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--copper); color:#0c1c2e;}
+  .menu-btn{display:none; background:none; border:1px solid var(--line); color:var(--text); width:40px; height:36px; border-radius:var(--radius);}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative; padding:74px 0 60px; overflow:hidden;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:50px; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--live); border:1px solid rgba(85,185,138,0.4); padding:5px 10px; border-radius:20px; margin-bottom:22px;
+    background:rgba(85,185,138,0.06);
+  }
+  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--live); box-shadow:0 0 0 0 rgba(85,185,138,.6); animation:pulse 2.2s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(85,185,138,.55);}
+    70%{box-shadow:0 0 0 8px rgba(85,185,138,0);}
+    100%{box-shadow:0 0 0 0 rgba(85,185,138,0);}
+  }
+  h1.title{
+    font-family:'IBM Plex Sans Condensed', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.05;
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+  }
+  h1.title .accent{color:var(--copper-bright);}
+  .role-line{
+    font-family:'IBM Plex Mono', monospace; font-size:14.5px; color:var(--text-dim);
+    display:flex; flex-wrap:wrap; gap:8px 0; margin-bottom:22px;
+  }
+  .role-line span{white-space:nowrap;}
+  .role-line span:not(:last-child)::after{content:" / "; color:var(--copper); margin:0 6px;}
+  p.lede{color:var(--text-dim); max-width:52ch; font-size:16px; margin-bottom:30px;}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:38px;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; text-transform:uppercase; letter-spacing:.05em;
+    padding:13px 22px; border-radius:var(--radius); text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn-primary{background:var(--copper); color:#0c1c2e; font-weight:600;}
+  .btn-primary:hover{background:var(--copper-bright); transform:translateY(-1px);}
+  .btn-ghost{border:1px solid var(--line); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--copper); color:var(--copper-bright);}
+
+  .stat-strip{display:flex; gap:0; border-top:1px solid var(--line); padding-top:22px;}
+  .stat{flex:1; padding-right:18px;}
+  .stat + .stat{border-left:1px solid var(--line); padding-left:18px;}
+  .stat b{display:block; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1.6rem; color:var(--text); font-weight:700;}
+  .stat span{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.06em;}
+
+  /* Hero portrait + circuit signature */
+  .hero-visual{position:relative;}
+  .portrait-frame{
+    position:relative; border:1px solid var(--line); border-radius:var(--radius); padding:14px;
+    background:linear-gradient(180deg, var(--panel), var(--panel-2));
+    max-width:340px; margin-left:auto;
+  }
+  .portrait-frame img{border-radius:2px; filter:saturate(0.92) contrast(1.03);}
+  .portrait-tag{
+    position:absolute; left:14px; bottom:14px; right:14px;
+    display:flex; justify-content:space-between; align-items:flex-end;
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#dfeaf2;
+    background:rgba(8,20,32,0.72); padding:8px 10px; border-radius:2px; letter-spacing:.03em;
+  }
+  .corner{position:absolute; width:14px; height:14px; border:2px solid var(--copper);}
+  .corner.tl{top:-1px; left:-1px; border-right:none; border-bottom:none;}
+  .corner.tr{top:-1px; right:-1px; border-left:none; border-bottom:none;}
+  .corner.bl{bottom:-1px; left:-1px; border-right:none; border-top:none;}
+  .corner.br{bottom:-1px; right:-1px; border-left:none; border-top:none;}
+
+  .trace-svg{position:absolute; top:-40px; right:-60px; width:340px; opacity:.55; pointer-events:none;}
+  .trace-svg path{fill:none; stroke:var(--copper); stroke-width:1.4; stroke-dasharray:6 6; animation:dash 20s linear infinite;}
+  @keyframes dash{to{stroke-dashoffset:-400;}}
+  .trace-svg circle{fill:var(--copper-bright);}
+
+  /* ---------- Section shells ---------- */
+  section{padding:76px 0;}
+  section.alt{background:linear-gradient(180deg, rgba(18,40,63,0.4), rgba(18,40,63,0));}
+  .sec-head{margin-bottom:40px; max-width:60ch;}
+  .sec-eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--copper-bright);
+    display:flex; align-items:center; gap:10px; margin-bottom:10px;
+  }
+  .sec-eyebrow::before{content:""; width:22px; height:1px; background:var(--copper);}
+  h2.sec-title{
+    font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:clamp(1.7rem,3vw,2.3rem);
+    margin:0 0 12px; letter-spacing:-0.01em;
+  }
+  .sec-sub{color:var(--text-dim); font-size:15px;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 300px; gap:48px;}
+  .about-body p{color:var(--text-dim); margin:0 0 16px;}
+  .about-body strong{color:var(--text);}
+  .side-card{
+    border:1px solid var(--line); border-radius:var(--radius); padding:20px;
+    background:var(--panel); font-family:'IBM Plex Mono',monospace; font-size:12.5px;
+  }
+  .side-card h4{margin:0 0 14px; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--copper-bright);}
+  .kv{display:flex; justify-content:space-between; gap:10px; padding:9px 0; border-top:1px solid var(--line-soft);}
+  .kv:first-of-type{border-top:none;}
+  .kv .k{color:var(--text-faint);}
+  .kv .v{color:var(--text); text-align:right;}
+
+  /* ---------- Timeline (Education / Experience) ---------- */
+  .timeline{position:relative; padding-left:28px; border-left:1px solid var(--line);}
+  .t-item{position:relative; padding-bottom:38px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:""; position:absolute; left:-33px; top:4px; width:10px; height:10px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--copper);
+  }
+  .t-item.now::before{background:var(--live); border-color:var(--live); box-shadow:0 0 0 4px rgba(85,185,138,.18);}
+  .t-date{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--copper-bright); text-transform:uppercase; letter-spacing:.07em; margin-bottom:6px; display:block;}
+  .t-title{font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:1.15rem; margin:0 0 3px;}
+  .t-org{color:var(--text-dim); font-size:13.5px; margin-bottom:10px;}
+  .t-list{margin:0; padding-left:18px; color:var(--text-dim); font-size:14.5px;}
+  .t-list li{margin-bottom:5px;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-dim); border:1px solid var(--line);
+    padding:4px 9px; border-radius:20px; background:rgba(255,255,255,0.02);
+  }
+
+  /* ---------- Results table ---------- */
+  .results-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel);}
+  table.results{width:100%; border-collapse:collapse; font-size:14px; min-width:560px;}
+  table.results th, table.results td{padding:12px 16px; text-align:left; border-bottom:1px solid var(--line-soft);}
+  table.results th{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint);
+    border-bottom:1px solid var(--line);
+  }
+  table.results td.sem{font-family:'IBM Plex Mono',monospace; color:var(--text-dim);}
+  table.results td.gpa{font-family:'IBM Plex Mono',monospace; color:var(--copper-bright); font-weight:600;}
+  table.results tr:last-child td{border-bottom:none;}
+  table.results tr.final{background:rgba(201,121,62,0.08);}
+  table.results tr.final td{font-weight:700; color:var(--text);}
+
+  /* ---------- Projects ---------- */
+  .proj-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .proj-card{
+    border:1px solid var(--line); border-radius:var(--radius); padding:26px; background:var(--panel);
+    display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden;
+  }
+  .proj-card::before{
+    content:""; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--copper);
+  }
+  .proj-badge{
+    align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--live); border:1px solid rgba(85,185,138,.35); padding:4px 9px; border-radius:20px;
+  }
+  .proj-card h3{margin:0; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1.25rem;}
+  .proj-card p{margin:0; color:var(--text-dim); font-size:14.5px;}
+  .proj-meta{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-faint); margin-top:auto; padding-top:8px; border-top:1px solid var(--line-soft);}
+
+  /* ---------- Skills ---------- */
+  .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .skill-card{border:1px solid var(--line); border-radius:var(--radius); padding:20px; background:var(--panel);}
+  .skill-card h4{
+    margin:0 0 14px; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:14px; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--copper-bright); display:flex; align-items:center; gap:8px;
+  }
+  .skill-card h4::before{content:""; width:8px; height:8px; background:var(--copper); display:inline-block;}
+  .skill-card ul{margin:0; padding:0; list-style:none; font-size:13.5px; color:var(--text-dim);}
+  .skill-card li{padding:6px 0; border-top:1px dashed var(--line-soft);}
+  .skill-card li:first-child{border-top:none;}
+
+  /* ---------- Certifications ---------- */
+  .cert-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .cert-card{
+    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--panel);
+    cursor:pointer; text-decoration:none; color:inherit; display:block;
+  }
+  .cert-thumb{aspect-ratio:4/3; overflow:hidden; background:#0a1826; position:relative;}
+  .cert-thumb img{width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .35s ease;}
+  .cert-card:hover .cert-thumb img{transform:scale(1.05);}
+  .cert-info{padding:14px 16px;}
+  .cert-info h5{margin:0 0 4px; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:14.5px;}
+  .cert-info span{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--text-faint);}
+  .cert-card.pending{cursor:default;}
+  .cert-card.pending .cert-thumb{
+    display:flex; align-items:center; justify-content:center; border:1px dashed var(--line);
+    background:repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 10px, transparent 10px 20px);
+  }
+  .cert-card.pending .cert-thumb span{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.06em;}
+
+  /* Modal */
+  .modal{
+    position:fixed; inset:0; background:rgba(6,14,22,0.92); display:none; align-items:center; justify-content:center;
+    z-index:100; padding:30px;
+  }
+  .modal.open{display:flex;}
+  .modal img{max-width:min(880px,92vw); max-height:88vh; border-radius:3px; border:1px solid var(--line);}
+  .modal-close{
+    position:absolute; top:24px; right:28px; width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+    background:rgba(18,40,63,0.8); color:var(--text); font-size:20px; cursor:pointer; line-height:1;
+  }
+
+  /* ---------- Achievements ---------- */
+  .ach-list{display:grid; gap:14px;}
+  .ach-item{
+    display:flex; gap:16px; align-items:flex-start; border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 20px; background:var(--panel);
+  }
+  .ach-icon{
+    flex:none; width:34px; height:34px; border-radius:50%; border:1px solid var(--copper); display:flex; align-items:center;
+    justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--copper-bright);
+  }
+  .ach-item p{margin:0; color:var(--text-dim); font-size:14.5px;}
+  .ach-item strong{color:var(--text);}
+
+  /* ---------- Contact ---------- */
+  .contact-panel{
+    border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(160deg, var(--panel), var(--panel-2));
+    padding:44px; display:grid; grid-template-columns:1.2fr 1fr; gap:40px; position:relative; overflow:hidden;
+  }
+  .contact-panel::after{
+    content:""; position:absolute; right:-40px; bottom:-40px; width:220px; height:220px;
+    background:radial-gradient(circle, rgba(201,121,62,0.14), transparent 70%);
+  }
+  .contact-copy h2{margin-top:0;}
+  .contact-copy p{color:var(--text-dim); max-width:44ch;}
+  .contact-list{display:grid; gap:16px;}
+  .contact-row{
+    display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 16px; background:rgba(8,20,32,0.4); text-decoration:none; color:var(--text);
+  }
+  .contact-row:hover{border-color:var(--copper);}
+  .contact-row .lbl{font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--text-faint); display:block;}
+  .contact-row .val{font-size:14.5px;}
+  .contact-icon{flex:none; width:32px; height:32px; border-radius:50%; background:rgba(201,121,62,0.14); color:var(--copper-bright); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:13px;}
+
+  footer{border-top:1px solid var(--line); padding:28px 0; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-faint);}
+  .foot-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:920px){
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .portrait-frame{margin:0 auto; max-width:220px;}
+    .trace-svg{display:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .proj-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:repeat(2,1fr);}
+    .cert-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-panel{grid-template-columns:1fr; padding:28px;}
+    .stat-strip{flex-wrap:wrap; gap:16px;}
+    .stat{flex:1 1 45%; border-left:none !important; padding-left:0 !important;}
+  }
+  @media (max-width:560px){
+    .skills-grid{grid-template-columns:1fr;}
+    .cert-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 30 30" fill="none">
+        <rect x="1" y="1" width="28" height="28" rx="2" stroke="#c9793e" stroke-width="1.4"/>
+        <path d="M6 15h4l2-6 4 12 2-6h6" stroke="#eaf2fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">Abdur <b>Rahaman</b></span>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Training</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Open to opportunities · Noakhali, Bangladesh</div>
+        <h1 class="title">Abdur Rahaman<br><span class="accent">Electrical Engineer.</span></h1>
+        <div class="role-line">
+          <span>CAD &amp; Electrical Drafting</span>
+          <span>PLC &amp; Industrial Automation</span>
+          <span>Power Systems</span>
+        </div>
+        <p class="lede">Diploma-in-Engineering graduate in Electrical Technology (BTEB), trained across industrial robot operation, PLC/HMI/SCADA control, and 2D/3D CAD drafting — with hands-on project and industrial attachment experience.</p>
+        <div class="hero-cta">
+          <a href="assets/Abdur_Rahaman_CV.pdf" class="btn btn-primary" download>Download CV</a>
+          <a href="#certifications" class="btn btn-ghost">View Certifications</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="stat-strip">
+          <div class="stat"><b>3.90 / 4.00</b><span>Final CGPA</span></div>
+          <div class="stat"><b>4</b><span>Training Programs</span></div>
+          <div class="stat"><b>7+</b><span>Certifications</span></div>
+          <div class="stat"><b>3rd</b><span>Place · Skills Competition</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <svg class="trace-svg" viewBox="0 0 300 300">
+          <path d="M10 40 H120 L150 70 V150 L190 190 H280"/>
+          <path d="M20 260 H90 L120 230 V120 L160 80 H260"/>
+          <circle cx="10" cy="40" r="3.5"/>
+          <circle cx="280" cy="190" r="3.5"/>
+          <circle cx="20" cy="260" r="3.5"/>
+          <circle cx="260" cy="80" r="3.5"/>
+        </svg>
+        <div class="portrait-frame">
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <img src="assets/img/profile.jpg" alt="Portrait of Abdur Rahaman">
+          <div class="portrait-tag">
+            <span>ID// AR-481453</span>
+            <span>ET · BTEB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="sec-head">
+          <div class="sec-eyebrow">About</div>
+          <h2 class="sec-title">Hello, I'm Abdur Rahaman.</h2>
+        </div>
+        <div class="about-body">
+          <p>I completed my <strong>Diploma-in-Engineering in Electrical Technology</strong> from Comilla Polytechnic Institute under the Bangladesh Technical Education Board, graduating with a final CGPA of <strong>3.90 out of 4.00</strong>.</p>
+          <p>My training spans <strong>industrial robot operation and troubleshooting</strong>, <strong>PLC, HMI, VFD and SCADA-based control systems</strong>, and <strong>2D/3D CAD drafting</strong> for electrical, mechanical, civil and architectural layouts. I've also completed structured training in industrial attachment and computer operations.</p>
+          <p>On the project side, I built an <strong>IoT-based home automation system</strong> with multiple control modes and <strong>redesigned an institute Single Line Diagram (SLD)</strong> for emergency maintenance — work that placed 3rd in an institute-level skills competition.</p>
+          <p>I'm now looking to grow into roles in <strong>electrical design, industrial automation, and maintenance</strong>, where I can apply both my technical training and hands-on project experience.</p>
+        </div>
+      </div>
+      <div class="side-card">
+        <h4>Quick facts</h4>
+        <div class="kv"><span class="k">Technology</span><span class="v">Electrical (67)</span></div>
+        <div class="kv"><span class="k">Board</span><span class="v">BTEB</span></div>
+        <div class="kv"><span class="k">Final CGPA</span><span class="v">3.90 / 4.00</span></div>
+        <div class="kv"><span class="k">SSC GPA</span><span class="v">3.83 / 5.00</span></div>
+        <div class="kv"><span class="k">Location</span><span class="v">Noakhali, BD</span></div>
+        <div class="kv"><span class="k">Languages</span><span class="v">Bangla, English</span></div>
+        <div class="kv"><span class="k">Status</span><span class="v">Open to work</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Education</div>
+        <h2 class="sec-title">Academic Record</h2>
+        <p class="sec-sub">Four-year Diploma-in-Engineering in Electrical Technology, Comilla Polytechnic Institute — semester-wise results.</p>
+      </div>
+
+      <div class="results-wrap">
+        <table class="results">
+          <thead>
+            <tr><th>Semester</th><th>Held</th><th>Highlight subjects</th><th>GPA</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="sem">1st</td><td>Dec 2019 – Jan 2020</td><td>Basic Electricity, Basic Electronics, Mathematics-1</td><td class="gpa">3.571</td></tr>
+            <tr><td class="sem">2nd</td><td>Feb – Mar 2021</td><td>Electrical Circuits-1, Electrical Appliances</td><td class="gpa">3.70</td></tr>
+            <tr><td class="sem">3rd</td><td>Nov – Dec 2021</td><td>Electrical Circuits-2, Advance Electricity</td><td class="gpa">3.93</td></tr>
+            <tr><td class="sem">4th</td><td>Mar – Apr 2022</td><td>DC Machines, Industrial Electronics</td><td class="gpa">3.92</td></tr>
+            <tr><td class="sem">5th</td><td>Aug – Sep 2022</td><td>Generation of Electrical Power, Renewable Energy</td><td class="gpa">4.00</td></tr>
+            <tr><td class="sem">6th</td><td>Jan – Mar 2023</td><td>AC Machines-1, T&amp;D of Electrical Power-1, Microcontroller &amp; PLC</td><td class="gpa">3.72</td></tr>
+            <tr><td class="sem">7th</td><td>Jul – Aug 2023</td><td>Switch Gear &amp; Protection, T&amp;D of Electrical Power-2</td><td class="gpa">4.00</td></tr>
+            <tr><td class="sem">8th</td><td>Dec 2023</td><td>Industrial Training</td><td class="gpa">4.00</td></tr>
+            <tr class="final"><td colspan="3">Final Result — 1st to 8th Semester (Pass)</td><td class="gpa">3.90</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="timeline" style="margin-top:44px;">
+        <div class="t-item">
+          <span class="t-date">2019 – 2023</span>
+          <h3 class="t-title">Diploma-in-Engineering, Electrical Technology</h3>
+          <div class="t-org">Comilla Polytechnic Institute · Bangladesh Technical Education Board (BTEB)</div>
+          <ul class="t-list">
+            <li>Final result: CGPA 3.90 / 4.00 — Pass</li>
+            <li>Coursework: Circuits &amp; Machines (DC/AC), Power Generation, Transmission &amp; Distribution, Switchgear &amp; Protection, Renewable Energy, Instrumentation &amp; Process Control, Microcontroller &amp; PLC</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="t-date">2019</span>
+          <h3 class="t-title">Secondary School Certificate (SSC)</h3>
+          <div class="t-org">Nabagram High School, Kabirhat · Board of Intermediate &amp; Secondary Education, Comilla</div>
+          <ul class="t-list">
+            <li>Group: Humanities — GPA 3.83 / 5.00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / TRAINING -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Training &amp; Attachment</div>
+        <h2 class="sec-title">Where I've Trained</h2>
+        <p class="sec-sub">Hands-on, competency-based training across automation, drafting, and industrial practice.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="t-item">
+          <span class="t-date">3 Months</span>
+          <h3 class="t-title">Industrial Robot Operation &amp; Troubleshooting</h3>
+          <div class="t-org">Bangladesh Industrial Technical Assistance Center (BITAC) · Tejgaon, Dhaka</div>
+          <ul class="t-list">
+            <li>Worked with RLC circuits, sensors, PLC, HMI, VFD and SCADA systems</li>
+            <li>Practical exposure to electropneumatics, industrial robots and COBOTs</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="t-date">4 Months</span>
+          <h3 class="t-title">CAD Operation (2D &amp; 3D) — NTVQF Level III</h3>
+          <div class="t-org">Technical Training Centre (TTC) · Kotbari, Cumilla</div>
+          <ul class="t-list">
+            <li>National Skill Certificate-III in CAD Operation, Skilled Worker</li>
+            <li>Electrical, mechanical, civil and architectural layout drafting</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="t-date">3 Months</span>
+          <h3 class="t-title">Computer Operation — NSDA Level 2</h3>
+          <div class="t-org">Technical Training Centre (TTC) · Gabua, Noakhali</div>
+          <ul class="t-list">
+            <li>MS Word, Excel and PowerPoint; Zoom meeting management &amp; troubleshooting</li>
+            <li>Assessed as Competent across all units — Certificate in Computer Operation, Level-2</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="t-date">3 Months</span>
+          <h3 class="t-title">Industrial Attachment</h3>
+          <div class="t-org">Master Knitwear · Gazipur (20 Aug – 19 Nov 2023)</div>
+          <ul class="t-list">
+            <li>Practical training course under Maintenance / Industrial Automation engineering</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="t-date">Course completed</span>
+          <h3 class="t-title">PLC &amp; Industrial Robot Operation</h3>
+          <div class="t-org">Certificate to be added soon</div>
+        </div>
+        <div class="t-item">
+          <span class="t-date">Course completed</span>
+          <h3 class="t-title">Electrical Installation &amp; Maintenance — Level 2</h3>
+          <div class="t-org">Certificate to be added soon</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Selected Work</div>
+        <h2 class="sec-title">Projects &amp; Achievements</h2>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <span class="proj-badge">3rd Place · Skills Competition</span>
+          <h3>IoT-Based Home Automation System</h3>
+          <p>A multi-control home automation system built in 4 days, controllable via phone call, Wi-Fi, manual switches, Bluetooth, Google Assistant, Alexa and remote control.</p>
+          <div class="proj-meta">Institute-Level Skills Competition 2023 · Comilla Polytechnic Institute (ASSET Project)</div>
+        </div>
+        <div class="proj-card">
+          <span class="proj-badge">Design</span>
+          <h3>Institute Single Line Diagram (SLD) Redesign</h3>
+          <p>Redesigned the institute's electrical Single Line Diagram to improve clarity and support faster emergency maintenance response.</p>
+          <div class="proj-meta">Comilla Polytechnic Institute</div>
+        </div>
+        <div class="proj-card">
+          <span class="proj-badge">Participant</span>
+          <h3>Regional Skills Competition 2023</h3>
+          <p>Represented Comilla Polytechnic Institute at the regional level with the Home Automation project, under the ASSET Project.</p>
+          <div class="proj-meta">Chattogram · Directorate of Technical Education, Ministry of Education</div>
+        </div>
+        <div class="proj-card">
+          <span class="proj-badge">Team</span>
+          <h3>Team-Based Build</h3>
+          <p>Delivered the automation project as a 3-person team, dividing design, wiring and control-logic responsibilities under time pressure.</p>
+          <div class="proj-meta">With Bijoy Krishna Dey &amp; Rasel Hossen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Capabilities</div>
+        <h2 class="sec-title">Skills &amp; Tools</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>CAD &amp; Drafting</h4>
+          <ul>
+            <li>AutoCAD (2D &amp; 3D)</li>
+            <li>Electrical layout drafting</li>
+            <li>Architectural &amp; structural layout</li>
+            <li>Mechanical drawing</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4>Automation &amp; Control</h4>
+          <ul>
+            <li>PLC &amp; microcontrollers</li>
+            <li>HMI &amp; SCADA</li>
+            <li>VFD &amp; electropneumatics</li>
+            <li>Industrial robot / COBOT operation</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4>Electrical Domain</h4>
+          <ul>
+            <li>DC &amp; AC machines</li>
+            <li>Power generation, T&amp;D, switchgear</li>
+            <li>Instrumentation &amp; process control</li>
+            <li>Renewable energy, digital electronics</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4>Software &amp; Professional</h4>
+          <ul>
+            <li>MS Word, Excel, PowerPoint</li>
+            <li>Email &amp; internet operations</li>
+            <li>Technical documentation</li>
+            <li>Teamwork under pressure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Credentials</div>
+        <h2 class="sec-title">Certifications &amp; Achievements</h2>
+        <p class="sec-sub">Click any certificate to view it full-size.</p>
+      </div>
+      <div class="cert-grid">
+
+        <a class="cert-card" href="assets/certificates/diploma-certificate.jpg" data-modal>
+          <div class="cert-thumb"><img src="assets/certificates/diploma-certificate.jpg" alt="Diploma-in-Engineering Certificate"></div>
+          <div class="cert-info"><h5>Diploma-in-Engineering Certificate</h5><span>BTEB · CGPA 3.90/4.00</span></div>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/cad-ntvqf-level3.jpg" data-modal>
+          <div class="cert-thumb"><img src="assets/certificates/cad-ntvqf-level3.jpg" alt="CAD Operation NTVQF Level III Certificate"></div>
+          <div class="cert-info"><h5>CAD Operation — NTVQF Level III</h5><span>National Skill Certificate-III</span></div>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/computer-operation-nsda-l2.jpg" data-modal>
+          <div class="cert-thumb"><img src="assets/certificates/computer-operation-nsda-l2.jpg" alt="Computer Operation NSDA Level 2 Certificate"></div>
+          <div class="cert-info"><h5>Computer Operation — NSDA Level 2</h5><span>Competency Assessment</span></div>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/industrial-attachment.jpg" data-modal>
+          <div class="cert-thumb"><img src="assets/certificates/industrial-attachment.jpg" alt="Industrial Attachment Certificate"></div>
+          <div class="cert-info"><h5>Industrial Attachment</h5><span>Master Knitwear, Gazipur</span></div>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/asset-institute-2023.jpg" data-modal>
+          <div class="cert-thumb"><img src="assets/certificates/asset-institute-2023.jpg" alt="ASSET Institute Level Skills Competition Certificate"></div>
+          <div class="cert-info"><h5>Institute Skills Competition — 3rd Place</h5><span>ASSET Project · 2023</span></div>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/asset-regional-2023.jpg" data-modal>
+          <div class="cert-thumb"><img src="assets/certificates/asset-regional-2023.jpg" alt="ASSET Regional Skills Competition Certificate"></div>
+          <div class="cert-info"><h5>Regional Skills Competition</h5><span>ASSET Project · Chattogram 2023</span></div>
+        </a>
+
+        <a class="cert-card" href="assets/certificates/ssc-certificate.jpg" data-modal>
+          <div class="cert-thumb"><img src="assets/certificates/ssc-certificate.jpg" alt="SSC Certificate"></div>
+          <div class="cert-info"><h5>SSC Certificate</h5><span>Board of Comilla · GPA 3.83/5.00</span></div>
+        </a>
+
+        <div class="cert-card pending">
+          <div class="cert-thumb"><span>Certificate coming soon</span></div>
+          <div class="cert-info"><h5>PLC &amp; Industrial Robot Operation</h5><span>Course completed</span></div>
+        </div>
+
+        <div class="cert-card pending">
+          <div class="cert-thumb"><span>Certificate coming soon</span></div>
+          <div class="cert-info"><h5>Electrical Installation &amp; Maintenance — Level 2</h5><span>Course completed</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Recognition</div>
+        <h2 class="sec-title">Highlights</h2>
+      </div>
+      <div class="ach-list">
+        <div class="ach-item">
+          <div class="ach-icon">01</div>
+          <p><strong>3rd Place</strong> — Institute-Level Skills Competition 2023, Comilla Polytechnic Institute, for the IoT-based Home Automation project (ASSET Project, supported by the World Bank).</p>
+        </div>
+        <div class="ach-item">
+          <div class="ach-icon">02</div>
+          <p><strong>Participant</strong> — Regional Skills Competition 2023, Chattogram, representing Comilla Polytechnic Institute (ASSET Project, Directorate of Technical Education).</p>
+        </div>
+        <div class="ach-item">
+          <div class="ach-icon">03</div>
+          <p><strong>Assessed Competent</strong> across all units in Computer Operation, NSDA Level 2, Noakhali Technical Training Centre.</p>
+        </div>
+        <div class="ach-item">
+          <div class="ach-icon">04</div>
+          <p><strong>National Skill Certificate-III</strong> in CAD Operation, NTVQF Level III — Skilled Worker classification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="alt">
+    <div class="wrap">
+      <div class="contact-panel">
+        <div class="contact-copy">
+          <div class="sec-eyebrow">Contact</div>
+          <h2 class="sec-title" style="margin-bottom:14px;">Let's build something.</h2>
+          <p>I'm looking for opportunities in electrical design, industrial automation, and maintenance. The fastest way to reach me is by phone or email — I reply to everything.</p>
+        </div>
+        <div class="contact-list">
+          <a class="contact-row" href="mailto:abdurrahaman1752@gmail.com">
+            <span class="contact-icon">@</span>
+            <span><span class="lbl">Email</span><span class="val">abdurrahaman1752@gmail.com</span></span>
+          </a>
+          <a class="contact-row" href="tel:+8801568759788">
+            <span class="contact-icon">☎</span>
+            <span><span class="lbl">Phone / WhatsApp</span><span class="val">+880 1568-759788</span></span>
+          </a>
+          <a class="contact-row" href="assets/Abdur_Rahaman_CV.pdf" download>
+            <span class="contact-icon">↓</span>
+            <span><span class="lbl">Download</span><span class="val">CV (PDF)</span></span>
+          </a>
+          <div class="contact-row" style="cursor:default;">
+            <span class="contact-icon">⌂</span>
+            <span><span class="lbl">Address</span><span class="val">Naba-Gram, Kabirhat, Noakhali, Bangladesh</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© 2026 Abdur Rahaman · Noakhali, Bangladesh</span>
+    <span>Electrical Technology · BTEB</span>
+  </div>
+</footer>
+
+<!-- Certificate modal -->
+<div class="modal" id="certModal">
+  <button class="modal-close" id="certModalClose" aria-label="Close">×</button>
+  <img id="certModalImg" src="" alt="Certificate preview">
+</div>
+
+<script>
+  var modal = document.getElementById('certModal');
+  var modalImg = document.getElementById('certModalImg');
+  document.querySelectorAll('[data-modal]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      modalImg.src = this.getAttribute('href');
+      modal.classList.add('open');
+    });
+  });
+  function closeModal(){ modal.classList.remove('open'); modalImg.src=''; }
+  document.getElementById('certModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
