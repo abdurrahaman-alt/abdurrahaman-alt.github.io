@@ -328,6 +328,108 @@
     .skills-grid{grid-template-columns:1fr;}
     .cert-grid{grid-template-columns:1fr;}
   }
+  /* ----- Projects Section ----- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--copper);
+}
+.project-img-wrapper {
+  position: relative;
+  height: 220px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+}
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(8, 20, 32, 0.8);
+  color: var(--text-dim);
+  padding: 4px 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  backdrop-filter: blur(4px);
+}
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.project-title {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 20px;
+  color: var(--text);
+  margin: 0 0 6px 0;
+}
+.project-category {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--copper-bright);
+  margin-bottom: 16px;
+}
+.project-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.project-tags span {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+  padding: 4px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+}
+.project-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+.project-link:hover {
+  color: var(--copper-bright);
+}
+.projects-cta {
+  text-align: center;
+  margin-top: 40px;
+}
 </style>
 </head>
 <body>
@@ -429,6 +531,58 @@
       </div>
     </div>
   </section>
+  <!-- =============== PROJECTS SECTION =============== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Selected Work</div>
+      <h2 class="sec-title">Featured Projects</h2>
+      <p class="sec-sub">Practical projects demonstrating my skills in electrical design, drafting, and industrial automation.</p>
+    </div>
+
+    <div class="project-grid">
+      
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <span class="project-badge">Automation & IoT</span>
+          <img src="project-automation.jpg" alt="Home Automation Project" class="project-img">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">IoT-Based Home Automation System</h3>
+          <span class="project-category">ASSET Skills Competition Project</span>
+          <p class="project-desc">Designed and built a home automation system with multiple control nodes. Integrated IoT for smart control, securing 3rd place in the institute-level skills competition.</p>
+          <div class="project-tags">
+            <span>PLC / HMI</span>
+            <span>Sensors</span>
+            <span>IoT</span>
+          </div>
+          <a href="#" class="project-link">Read more &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <span class="project-badge">Design & CAD</span>
+          <img src="project-sld.jpg" alt="Single Line Diagram Project" class="project-img">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Institute Single Line Diagram (SLD)</h3>
+          <span class="project-category">Emergency Maintenance Design</span>
+          <p class="project-desc">Redesigned the complete Single Line Diagram (SLD) for the institute to streamline emergency maintenance and ensure accurate electrical power distribution mapping.</p>
+          <div class="project-tags">
+            <span>AutoCAD 2D</span>
+            <span>Drafting</span>
+            <span>Power Systems</span>
+          </div>
+          <a href="#" class="project-link">Read more &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- EDUCATION -->
   <section id="education" class="alt">
