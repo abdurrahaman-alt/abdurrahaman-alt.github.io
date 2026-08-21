@@ -429,7 +429,21 @@
 .projects-cta {
   text-align: center;
   margin-top: 40px;
-}
+}  
+    /* নতুন যোগ করা কোড এখানে পেস্ট করুন */
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .brand-img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid #c9793e;
+    }
 </style>
 </head>
 <body>
@@ -437,17 +451,14 @@
 <header class="nav">
   <div class="wrap nav-row">
     <a href="#top" class="brand">
-      <svg class="brand-mark" viewBox="0 0 30 30" fill="none">
-        <rect x="1" y="1" width="28" height="28" rx="2" stroke="#c9793e" stroke-width="1.4"/>
-        <path d="M6 15h4l2-6 4 12 2-6h6" stroke="#eaf2fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+     <img src="Abdur Rahaman photo.png" alt="Abdur Rahaman" class="brand-img">
       <span class="brand-text">Abdur <b>Rahaman</b></span>
     </a>
     <nav class="links">
       <a href="#about">About</a>
+      <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#experience">Training</a>
-      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
