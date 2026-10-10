@@ -628,43 +628,45 @@
 
     <div class="project-grid">
       
-      <!-- Project 1 -->
-      <div class="project-card">
-        <div class="project-img-wrapper">
-          <span class="project-badge">Automation & IoT</span>
-          <img src="project-automation.jpg" alt="Home Automation Project" class="project-img">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">IoT-Based Home Automation System</h3>
-          <span class="project-category">ASSET Skills Competition Project</span>
-          <p class="project-desc">Designed and built a home automation system with multiple control nodes. Integrated IoT for smart control, securing 3rd place in the institute-level skills competition.</p>
-          <div class="project-tags">
+<!-- Project 1 -->
+<div class="project-card">
+    <div class="project-img-wrapper">
+        <span class="project-badge">Automation &amp; IoT</span>
+        <img src="project-automation.jpg" alt="Home Automation Project" class="project-img">
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">IoT-Based Home Automation System</h3>
+        <span class="project-category">ASSET Skills Competition Project</span>
+        <p class="project-desc">Designed and built a home automation system with multiple control nodes. Integrated IoT for smart control, securing 3rd place in the institute-level skills competition.</p>
+        <div class="project-tags">
             <span>PLC / HMI</span>
             <span>Sensors</span>
             <span>IoT</span>
-          </div>
-<button class="project-link-btn" onclick="openModal('modal-p1')">Read Details &amp; Docs &rarr;</button>
         </div>
-      </div>
+        <!-- Ekhane target="_blank" diye alada page-er link bosiye diben -->
+        <a href="project-1.html" target="_blank" class="project-link">Read Details &amp; Docs &rarr;</a>
+    </div>
+</div>
 
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div class="project-img-wrapper">
-          <span class="project-badge">Design & CAD</span>
-          <img src="project-sld.jpg" alt="Single Line Diagram Project" class="project-img">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Institute Single Line Diagram (SLD)</h3>
-          <span class="project-category">Emergency Maintenance Design</span>
-          <p class="project-desc">Redesigned the complete Single Line Diagram (SLD) for the institute to streamline emergency maintenance and ensure accurate electrical power distribution mapping.</p>
-          <div class="project-tags">
+<!-- Project 2 -->
+<div class="project-card">
+    <div class="project-img-wrapper">
+        <span class="project-badge">Design &amp; CAD</span>
+        <img src="project-sld.jpg" alt="Single Line Diagram Project" class="project-img">
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Institute Single Line Diagram (SLD)</h3>
+        <span class="project-category">Emergency Maintenance Design</span>
+        <p class="project-desc">Redesigned the complete Single Line Diagram (SLD) for the institute to streamline emergency maintenance and ensure accurate electrical power distribution mapping.</p>
+        <div class="project-tags">
             <span>AutoCAD 2D</span>
             <span>Drafting</span>
             <span>Power Systems</span>
-          </div>
-<button class="project-link-btn" onclick="openModal('modal-p2')">Read Details &amp; Docs &rarr;</button>
         </div>
-      </div>
+        <!-- Project 2 er alada page link -->
+        <a href="project-2.html" target="_blank" class="project-link">Read Details &amp; Docs &rarr;</a>
+    </div>
+</div>
 
     </div>
   </div>
@@ -1059,70 +1061,6 @@
     <img id="certModalImg" src="" alt="Certificate preview">
 </div>
 
-<!-- Project Modals (Home Automation & SLD Diagram) -->
-
-<!-- Modal 1: Home Automation -->
-<div id="modal-p1" class="proj-modal">
-    <div class="proj-modal-content">
-        <button class="proj-modal-close" onclick="closeProjectModal('modal-p1')" aria-label="Close">&times;</button>
-        <div class="proj-modal-header">
-            <span class="proj-badge">Automation &amp; IoT</span>
-            <h2>IoT-Based Home Automation System</h2>
-            <p class="proj-sub">ASSET Skills Competition Project (3rd Place Winner)</p>
-        </div>
-        <div class="proj-modal-body">
-            <h4>Overview &amp; Objectives:</h4>
-            <p>Developed a smart home automation system capable of controlling electrical appliances remotely via IoT protocols and local PLC/HMI dashboards. Engineered for energy efficiency, safety monitoring, and automated load control.</p>
-            
-            <h4>Key Features &amp; Modules:</h4>
-            <ul>
-                <li>Multi-node relay control interface for AC appliances.</li>
-                <li>Real-time sensor monitoring (Temperature, Gas leakage, Motion detection).</li>
-                <li>Integrated HMI &amp; Cloud IoT dashboard for remote operation.</li>
-                <li>Failsafe circuit breakers and manual override protection.</li>
-            </ul>
-
-            <h4>Essential Documents &amp; Proofs:</h4>
-            <div class="proj-docs">
-                <a href="ASSET%20Skill%20competetion%20certificate%20Institute%20level.jpg" target="_blank" class="doc-btn">
-                    📄 View Award Certificate (Institute 3rd Place)
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 2: Single Line Diagram -->
-<div id="modal-p2" class="proj-modal">
-    <div class="proj-modal-content">
-        <button class="proj-modal-close" onclick="closeProjectModal('modal-p2')" aria-label="Close">&times;</button>
-        <div class="proj-modal-header">
-            <span class="proj-badge">Design &amp; CAD</span>
-            <h2>Institute Single Line Diagram (SLD)</h2>
-            <p class="proj-sub">Emergency Maintenance &amp; Electrical Layout Project</p>
-        </div>
-        <div class="proj-modal-body">
-            <h4>Overview &amp; Objectives:</h4>
-            <p>Designed a comprehensive Single Line Diagram (SLD) for the institute's power distribution system to map high/low voltage lines, switchgears, transformers, and distribution panels for fast fault identification and emergency response.</p>
-            
-            <h4>Key Technical Components:</h4>
-            <ul>
-                <li>Main Distribution Board (MDB) &amp; Sub Distribution Board (SDB) mapping.</li>
-                <li>Load calculation and circuit breaker sizing (MCCB, MCB, RCCB).</li>
-                <li>Transformer, HT/LT Panel, and Cable Routing Diagrams.</li>
-                <li>Compliance with BNBC &amp; Electrical Safety Codes.</li>
-            </ul>
-
-            <h4>Essential Documents &amp; Proofs:</h4>
-            <div class="proj-docs">
-                <a href="Auto%20CAD.jpg" target="_blank" class="doc-btn">
-                    📄 View CAD Design Certification (Level III)
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script>
     var modal = document.getElementById('certModal');
     var modalImg = document.getElementById('certModalImg');
@@ -1137,21 +1075,6 @@
     document.getElementById('certModalClose').addEventListener('click', closeModal);
     modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
-
-    // Project Modal Logic
-    function openModal(id) {
-        var pModal = document.getElementById(id);
-        if(pModal) pModal.style.display = "block";
-    }
-    function closeProjectModal(id) {
-        var pModal = document.getElementById(id);
-        if(pModal) pModal.style.display = "none";
-    }
-    window.addEventListener('click', function(event) {
-        if (event.target.classList.contains('proj-modal')) {
-            event.target.style.display = "none";
-        }
-    });
 </script>
 
 </body>
