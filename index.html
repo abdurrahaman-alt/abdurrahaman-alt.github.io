@@ -227,7 +227,82 @@
   .proj-card h3{margin:0; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1.25rem;}
   .proj-card p{margin:0; color:var(--text-dim); font-size:14.5px;}
   .proj-meta{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-faint); margin-top:auto; padding-top:8px; border-top:1px solid var(--line-soft);}
-
+/* --------- Project Modal Popup --------- */
+.proj-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(5px);
+}
+.proj-modal-content {
+    background-color: var(--panel);
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 650px;
+    color: var(--text);
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.proj-modal-close {
+    color: var(--text);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.proj-modal-close:hover {
+    color: var(--copper);
+}
+.proj-modal-header h2 {
+    color: var(--text);
+    margin: 10px 0 5px 0;
+    font-size: 22px;
+}
+.proj-sub {
+    color: var(--copper);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.proj-modal-body h4 {
+    color: var(--text);
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+.proj-modal-body p, .proj-modal-body ul {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+.proj-docs {
+    margin-top: 20px;
+}
+.doc-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: rgba(201, 121, 62, 0.1);
+    color: var(--copper);
+    border: 1px solid var(--copper);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.doc-btn:hover {
+    background-color: var(--copper);
+    color: #ffffff;
+}
   /* ---------- Skills ---------- */
   .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
   .skill-card{border:1px solid var(--line); border-radius:var(--radius); padding:20px; background:var(--panel);}
@@ -568,7 +643,7 @@
             <span>Sensors</span>
             <span>IoT</span>
           </div>
-          <a href="#" class="project-link">Read more &rarr;</a>
+<button class="project-link-btn" onclick="openModal('modal-p1')">Read Details &amp; Docs &rarr;</button>
         </div>
       </div>
 
@@ -587,7 +662,7 @@
             <span>Drafting</span>
             <span>Power Systems</span>
           </div>
-          <a href="#" class="project-link">Read more &rarr;</a>
+<button class="project-link-btn" onclick="openModal('modal-p2')">Read Details &amp; Docs &rarr;</button>
         </div>
       </div>
 
@@ -980,24 +1055,103 @@
 
 <!-- Certificate modal -->
 <div class="modal" id="certModal">
-  <button class="modal-close" id="certModalClose" aria-label="Close">×</button>
-  <img id="certModalImg" src="" alt="Certificate preview">
+    <button class="modal-close" id="certModalClose" aria-label="Close">&times;</button>
+    <img id="certModalImg" src="" alt="Certificate preview">
+</div>
+
+<!-- Project Modals (Home Automation & SLD Diagram) -->
+
+<!-- Modal 1: Home Automation -->
+<div id="modal-p1" class="proj-modal">
+    <div class="proj-modal-content">
+        <button class="proj-modal-close" onclick="closeProjectModal('modal-p1')" aria-label="Close">&times;</button>
+        <div class="proj-modal-header">
+            <span class="proj-badge">Automation &amp; IoT</span>
+            <h2>IoT-Based Home Automation System</h2>
+            <p class="proj-sub">ASSET Skills Competition Project (3rd Place Winner)</p>
+        </div>
+        <div class="proj-modal-body">
+            <h4>Overview &amp; Objectives:</h4>
+            <p>Developed a smart home automation system capable of controlling electrical appliances remotely via IoT protocols and local PLC/HMI dashboards. Engineered for energy efficiency, safety monitoring, and automated load control.</p>
+            
+            <h4>Key Features &amp; Modules:</h4>
+            <ul>
+                <li>Multi-node relay control interface for AC appliances.</li>
+                <li>Real-time sensor monitoring (Temperature, Gas leakage, Motion detection).</li>
+                <li>Integrated HMI &amp; Cloud IoT dashboard for remote operation.</li>
+                <li>Failsafe circuit breakers and manual override protection.</li>
+            </ul>
+
+            <h4>Essential Documents &amp; Proofs:</h4>
+            <div class="proj-docs">
+                <a href="ASSET%20Skill%20competetion%20certificate%20Institute%20level.jpg" target="_blank" class="doc-btn">
+                    📄 View Award Certificate (Institute 3rd Place)
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: Single Line Diagram -->
+<div id="modal-p2" class="proj-modal">
+    <div class="proj-modal-content">
+        <button class="proj-modal-close" onclick="closeProjectModal('modal-p2')" aria-label="Close">&times;</button>
+        <div class="proj-modal-header">
+            <span class="proj-badge">Design &amp; CAD</span>
+            <h2>Institute Single Line Diagram (SLD)</h2>
+            <p class="proj-sub">Emergency Maintenance &amp; Electrical Layout Project</p>
+        </div>
+        <div class="proj-modal-body">
+            <h4>Overview &amp; Objectives:</h4>
+            <p>Designed a comprehensive Single Line Diagram (SLD) for the institute's power distribution system to map high/low voltage lines, switchgears, transformers, and distribution panels for fast fault identification and emergency response.</p>
+            
+            <h4>Key Technical Components:</h4>
+            <ul>
+                <li>Main Distribution Board (MDB) &amp; Sub Distribution Board (SDB) mapping.</li>
+                <li>Load calculation and circuit breaker sizing (MCCB, MCB, RCCB).</li>
+                <li>Transformer, HT/LT Panel, and Cable Routing Diagrams.</li>
+                <li>Compliance with BNBC &amp; Electrical Safety Codes.</li>
+            </ul>
+
+            <h4>Essential Documents &amp; Proofs:</h4>
+            <div class="proj-docs">
+                <a href="Auto%20CAD.jpg" target="_blank" class="doc-btn">
+                    📄 View CAD Design Certification (Level III)
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
-  var modal = document.getElementById('certModal');
-  var modalImg = document.getElementById('certModalImg');
-  document.querySelectorAll('[data-modal]').forEach(function(el){
-    el.addEventListener('click', function(e){
-      e.preventDefault();
-      modalImg.src = this.getAttribute('href');
-      modal.classList.add('open');
+    var modal = document.getElementById('certModal');
+    var modalImg = document.getElementById('certModalImg');
+    document.querySelectorAll('[data-modal]').forEach(function(el){
+        el.addEventListener('click', function(e){
+            e.preventDefault();
+            modalImg.src = this.getAttribute('href');
+            modal.classList.add('open');
+        });
     });
-  });
-  function closeModal(){ modal.classList.remove('open'); modalImg.src=''; }
-  document.getElementById('certModalClose').addEventListener('click', closeModal);
-  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+    function closeModal(){ modal.classList.remove('open'); modalImg.src=''; }
+    document.getElementById('certModalClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+    // Project Modal Logic
+    function openModal(id) {
+        var pModal = document.getElementById(id);
+        if(pModal) pModal.style.display = "block";
+    }
+    function closeProjectModal(id) {
+        var pModal = document.getElementById(id);
+        if(pModal) pModal.style.display = "none";
+    }
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('proj-modal')) {
+            event.target.style.display = "none";
+        }
+    });
 </script>
 
 </body>
