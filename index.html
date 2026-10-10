@@ -26,21 +26,33 @@
     --maxw: 1120px;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px),
-      var(--bg);
+
+:root {
+    --bg-color: #0a192f;
+    --card-bg: #112240;
+    --text-color: #8892b0;
+    --heading-color: #e6f1ff;
+    --accent-color: #64ffda;
+    --border-color: #233554;
+}
+
+body.light-mode {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #555555;
+    --heading-color: #1a1a1a;
+    --accent-color: #0066cc;
+    --border-color: #d1d5db;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
     background-size: 34px 34px, 34px 34px, auto;
     background-attachment: fixed;
-    color:var(--text);
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+}
   a{color:inherit;}
   img{max-width:100%; display:block;}
   .mono{font-family:'IBM Plex Mono', monospace;}
@@ -74,6 +86,22 @@
   }
   .nav-cta:hover{background:var(--copper); color:#0c1c2e;}
   .menu-btn{display:none; background:none; border:1px solid var(--line); color:var(--text); width:40px; height:36px; border-radius:var(--radius);}
+  /* --- Toggle Button Style --- */
+.theme-toggle-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--heading-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--accent-color);
+}
 
   /* ---------- Hero ---------- */
   .hero{position:relative; padding:74px 0 60px; overflow:hidden;}
@@ -539,6 +567,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <a href="#contact" class="nav-cta">Get in touch</a>
+<button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
   </div>
 </header>
 
@@ -1112,6 +1141,33 @@
     document.getElementById('certModalClose').addEventListener('click', closeModal);
     modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+</script>
+  
+  <script>
+    // Theme toggle button ebong localStorage theke ager preference check korar variable
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const currentTheme = localStorage.getItem('portfolio_theme');
+
+    // Page load hobar somoy jodi age theke light mode save thake, tahole ta apply korbe
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-mode');
+        themeToggleBtn.textContent = '🌙'; // Dark mode er icon show korbe
+    }
+
+    // Toggle button-e click korle theme change ebong save korar event listener
+    themeToggleBtn.addEventListener('click', function () {
+        // body tag-er sathe 'light-mode' class add ba remove korbe
+        document.body.classList.toggle('light-mode');
+        
+        // ekhon kon theme active ache ta check kore icon change ebong localStorage-e save korbe
+        if (document.body.classList.contains('light-mode')) {
+            themeToggleBtn.textContent = '🌙';
+            localStorage.setItem('portfolio_theme', 'light');
+        } else {
+            themeToggleBtn.textContent = '☀️';
+            localStorage.setItem('portfolio_theme', 'dark');
+        }
+    });
 </script>
 
 </body>
