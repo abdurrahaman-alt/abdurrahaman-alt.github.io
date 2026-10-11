@@ -3,51 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industrial Robot Design & Simulation - Project Details</title>
-    <style>
-        body { background-color: #0a192f; color: #8892b0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 40px 20px; line-height: 1.6; }
-        .project-detail-container { max-width: 850px; margin: 0 auto; background-color: #112240; border: 1px solid #233554; border-radius: 12px; padding: 40px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); }
-        .back-link { display: inline-block; color: #64ffda; text-decoration: none; font-weight: 600; margin-bottom: 25px; transition: color 0.3s; }
-        .back-link:hover { color: #ffffff; }
-        .proj-badge { display: inline-block; font-family: monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #64ffda; border: 1px solid rgba(100, 255, 218, 0.35); padding: 4px 10px; border-radius: 20px; margin-bottom: 15px; }
-        h1 { color: #e6f1ff; font-size: 28px; margin: 0 0 10px 0; }
-        .proj-sub { color: #64ffda; font-size: 16px; margin-bottom: 30px; font-weight: 500; }
-        h3 { color: #ccd6f6; margin-top: 30px; margin-bottom: 12px; font-size: 18px; border-bottom: 1px solid #233554; padding-bottom: 6px; }
-        p, li { color: #8892b0; font-size: 15px; }
-        ul { margin: 0 0 20px 20px; padding: 0; }
-        li { margin-bottom: 8px; }
-        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; margin-top: 15px; margin-bottom: 25px; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px; border: 1px solid #233554; }
-        .doc-btn { display: inline-block; padding: 12px 20px; background-color: rgba(100, 255, 218, 0.1); color: #64ffda; border: 1px solid #64ffda; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.3s ease; margin-top: 10px; }
-        .doc-btn:hover { background-color: #64ffda; color: #0a192f; }
-    </style>
+    <title>Industrial Robot Design & Simulation - Abdur Rahaman</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="project-detail-container">
-        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
-        <span class="proj-badge">Robotics &amp; Simulation</span>
-        <h1>Industrial Robot Design &amp; Simulation</h1>
-        <p class="proj-sub">CIROS App &amp; Workcell Programming Project</p>
 
-        <h3>Overview &amp; Objectives</h3>
-        <p>Designed and simulated an automated industrial robotic cell using the CIROS application. Focused on kinematic configuration, trajectory path planning, and optimization of automated material handling and pick-and-place tasks.</p>
-
-        <h3>Key Features &amp; Modules</h3>
-        <ul>
-            <li>3D workcell modeling and component placement layout.</li>
-            <li>Robot arm trajectory planning and collision avoidance testing.</li>
-            <li>Automated pick-and-place cycle programming.</li>
-            <li>Virtual commissioning and cycle time performance analysis.</li>
-        </ul>
-
-        <h3>Project Video Demonstration</h3>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Robot Simulation Video" frameborder="0" allowfullscreen></iframe>
+    <!-- Navbar / Header -->
+    <header class="sticky">
+        <div class="nav-row wrap">
+            <a href="index.html" class="brand">
+                <span class="brand-text">Abdur <b>Rahaman</b></span>
+            </a>
+            <nav class="links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#education">Education</a>
+                <a href="index.html#experience">Training</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#certifications">Certifications</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <a href="index.html#contact" class="nav-cta">Get in touch</a>
+            <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
         </div>
+    </header>
 
-        <h3>Essential Documents &amp; Files</h3>
-        <p>Simulation project documentation or design proofs:</p>
-        <a href="robot-design-report.pdf" target="_blank" class="doc-btn">📄 View Robot Design Report / PDF</a>
-    </div>
+    <!-- Project Details Main Content -->
+    <main class="wrap" style="padding: 60px 20px;">
+        <section style="max-width: 800px; margin: 0 auto;">
+            <span style="font-family: 'IBM Plex Mono', monospace; color: var(--accent-color); font-size: 14px; text-transform: uppercase;">Robotics & Simulation</span>
+            <h1 style="font-size: 36px; color: var(--heading-color); margin-top: 10px; margin-bottom: 20px;">Industrial Robot Design & Simulation</h1>
+            
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-color); margin-bottom: 30px;">
+                Engineered and simulated industrial robot workcells using the CIROS application. Focused on kinematic modeling, trajectory path planning, and automated pick-and-place operations.
+            </p>
+
+            <!-- Video Display Section -->
+            <div style="margin-bottom: 40px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: var(--card-bg);">
+                <video controls width="100%" style="display: block;">
+                    <source src="Robot simulation (1).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <h3 style="color: var(--heading-color); margin-bottom: 15px;">Key Project Highlights</h3>
+            <ul style="color: var(--text-color); line-height: 1.8; margin-bottom: 30px; padding-left: 20px;">
+                <li>CIROS App & Workcell Programming setup and layout design.</li>
+                <li>Trajectory path planning to optimize robot cycle time.</li>
+                <li>Kinematic modeling and collision avoidance strategies.</li>
+                <li>Automated pick-and-place operation sequence testing.</li>
+            </ul>
+
+            <div style="margin-top: 40px;">
+                <a href="index.html#projects" class="nav-cta" style="display: inline-block;">← Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color); margin-top: 60px; color: var(--text-color); font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
+        <p>© 2026 Abdur Rahaman · Electrical Technology</p>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const currentTheme = localStorage.getItem('portfolio_theme');
+
+        if (currentTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeToggleBtn.textContent = '🌙';
+        }
+
+        themeToggleBtn.addEventListener('click', function () {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                themeToggleBtn.textContent = '🌙';
+                localStorage.setItem('portfolio_theme', 'light');
+            } else {
+                themeToggleBtn.textContent = '☀️';
+                localStorage.setItem('portfolio_theme', 'dark');
+            }
+        });
+    </script>
 </body>
 </html>
